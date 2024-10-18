@@ -59,8 +59,8 @@
 <div class="h-screen fixed w-screen" class:hidden={playerWinValue == 0}>
 	<Fireworks bind:this={fw} autostart={false} {options} class="h-screen fixed w-screen" />
 </div>
-<section class="flex justify-between min-h-screen max-w-7xl mx-auto z-20">
-	<div class="flex flex-col justify-center">
+<section class="flex md:justify-between justify-center min-h-screen max-w-7xl mx-auto z-20">
+	<div class="md:flex hidden flex-col justify-center">
 		<button
 			class="px-3 py-3 bg-red-500/20 text-red-500 text-6xl rounded-full"
 			class:opacity-20={!isMoveValue}
@@ -68,6 +68,7 @@
 			on:click={async () => {
 				gameLogic.cancel();
 				board = [...gameLogic.board];
+				await gameLogic.getHint();
 			}}
 		>
 			<Icon icon="material-symbols:cancel-outline" />
@@ -145,9 +146,35 @@
 									? 'Purple'
 									: ''}
 		</div>
+		<div class="flex space-y-5 items-end">
+			<button
+				class="px-3 py-3 bg-red-500/20 text-red-500 text-6xl rounded-full md:hidden block"
+				class:opacity-20={!isMoveValue}
+				disabled={!isMoveValue}
+				on:click={async () => {
+					gameLogic.cancel();
+					board = [...gameLogic.board];
+					await gameLogic.getHint();
+				}}
+			>
+				<Icon icon="material-symbols:cancel-outline" />
+			</button>
 
+			<button
+				class="px-3 py-3 bg-green-500/20 text-green-500 text-6xl rounded-full md:hidden block"
+				class:opacity-20={!isMoveValue}
+				disabled={!isMoveValue}
+				on:click={async () => {
+					isMoveValue = false;
+					await gameLogic.submit();
+					board = [...gameLogic.board];
+				}}
+			>
+				<Icon icon="material-symbols:check" />
+			</button>
+		</div>
 	</div>
-	<div class="flex flex-col justify-center">
+	<div class="md:flex hidden flex-col justify-center">
 		<button
 			class="px-3 py-3 bg-green-500/20 text-green-500 text-6xl rounded-full"
 			class:opacity-20={!isMoveValue}
@@ -168,13 +195,13 @@
 		@apply flex flex-col justify-center;
 	}
 	.col {
-		@apply flex justify-center space-x-2 mb-2;
+		@apply flex justify-center space-x-1;
 	}
 	.void {
-		@apply w-10 h-10 rounded-full opacity-30;
+		@apply md:w-10 md:h-10 w-6 h-6 rounded-full;
 	}
 	.hole {
-		@apply bg-white;
+		@apply void bg-white;
 	}
 	.player1 {
 		@apply bg-red-500 text-red-500;

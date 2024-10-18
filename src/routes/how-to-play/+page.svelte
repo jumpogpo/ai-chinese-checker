@@ -4,7 +4,7 @@
 <div class="mx-auto w-full text-white text-center">
     <div class="relative isolate bg-[#FDBA74] h-full">
         <center>
-            <div class="flex flex-col px-96 text-black">
+            <div class="flex flex-col max-w-xl text-black">
                 <div class="p-5 py-8">
                     <h1 class="text-6xl font-bold text-white">HOW TO PLAY</h1>
                 </div>

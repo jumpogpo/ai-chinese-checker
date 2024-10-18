@@ -14,11 +14,11 @@
 </script>
 
 <div class="flex flex-col items-center justify-center min-h-screen bg-[#FDBA74]">
-	<h1 class="text-6xl font-bold mb-28 text-white">CHINESE CHECKERS GAMES</h1>
+	<h1 class="text-6xl font-bold my-20 text-white text-center nt-5">CHINESE CHECKERS GAMES</h1>
 	<div class="flex items-center justify-center">
 		<div class="relative">
 			<!-- svelte-ignore a11y-img-redundant-alt -->
-			<img src="/tv.png" alt="TV Image" class="w-[500px] md:w-[1000px] h-auto shadow-lg" />
+			<img src="/tv.png" alt="TV Image" class="w-[500px] md:w-[1000px] h-auto shadow-lg md:block hidden" />
 		</div>
 		<div class="flex flex-col space-y-20 px-20 items-center justify-center py-8 text-2xl">
 			<button class="px-14 py-10 bg-white rounded-md shadow hover:bg-gray-100"
