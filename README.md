@@ -43,8 +43,8 @@ The goal is to transport all of your pieces into the triangle opposite your star
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/PunGrumpy/ai-chinese-checkers.git
-   cd ai-chinese-checkers
+   git clone https://github.com/jumpogpo/ai-chinese-checker.git
+   cd ai-chinese-checker
    ```
 2. Install the required dependencies:
 
